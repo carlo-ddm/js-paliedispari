@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let pariUtente = '';
+
+    let isPariODispariCorretto = false;
+
+    while (isPariODispariCorretto == false){
+
+      pariUtente = prompt('Dimmi o pari o dispari').trim();
+
+      if (pariUtente == 'pari' || pariUtente == 'dispari') {
+
+        isPariODispariCorretto = true;
+      }
+    }
+
+    console.log('L\'utente ha scelto:', pariUtente);
+    
+
+
+    let number = parseInt(prompt('Inserisci un numero da 1 a 5'));
+    console.log('Numero scelto dall\'utente: ', number);
+    
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    const numberPc = getRandomNumber(1, 5);
+    console.log('Numero estratto dal PC: ', numberPc);
+
+    function isPariDispari(number, numberPc) {
+      if ((number + numberPc) % 2) {
+        console.log('Il totale è un numero dispari');
+        return false;
+        } else {
+          console.log('Il totale è un numero pari');
+          return true;
+        }
+      }
+      const result = isPariDispari(number, numberPc);
+      console.log(result);
+
+  </script>
+  </body>
+
+</html>
